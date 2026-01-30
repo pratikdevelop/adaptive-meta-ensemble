@@ -1,0 +1,19 @@
+include README.md
+include LICENSE
+include requirements.txt
+include CONTRIBUTING.md
+include QUICK_START.md
+include AME_research_paper.md
+
+# Include benchmark results
+include classification_benchmarks.csv
+include regression_benchmarks.csv
+include benchmark_comparison.png
+include ame_weight_visualization.png
+
+# Exclude development files
+exclude .gitignore
+exclude setup.py
+recursive-exclude tests *
+recursive-exclude examples *.pyc
+recursive-exclude docs *.pyc

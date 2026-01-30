@@ -1,0 +1,92 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "setuptools_scm>=6.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "adaptive-meta-ensemble"
+version = "1.0.0"
+description = "A novel machine learning algorithm with adaptive ensemble weighting"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "Pratik Kumar", email = "your.email@example.com"}
+]
+maintainers = [
+    {name = "Pratik Kumar", email = "your.email@example.com"}
+]
+keywords = [
+    "machine-learning",
+    "ensemble-learning",
+    "meta-learning",
+    "adaptive-algorithms",
+    "scikit-learn",
+    "classification",
+    "regression",
+    "automl"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "numpy>=1.20.0",
+    "scikit-learn>=1.0.0",
+    "scipy>=1.7.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=22.0.0",
+    "flake8>=5.0.0",
+    "mypy>=0.990",
+]
+viz = [
+    "matplotlib>=3.5.0",
+    "seaborn>=0.11.0",
+    "pandas>=1.3.0",
+]
+all = [
+    "matplotlib>=3.5.0",
+    "seaborn>=0.11.0",
+    "pandas>=1.3.0",
+    "pytest>=7.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/pratikdevelop/adaptive-meta-ensemble"
+Documentation = "https://github.com/pratikdevelop/adaptive-meta-ensemble#readme"
+Repository = "https://github.com/pratikdevelop/adaptive-meta-ensemble.git"
+"Bug Tracker" = "https://github.com/pratikdevelop/adaptive-meta-ensemble/issues"
+
+[tool.setuptools]
+py-modules = ["ame_pro", "adaptive_meta_ensemble"]
+
+[tool.black]
+line-length = 100
+target-version = ['py38', 'py39', 'py310', 'py311']
+include = '\.pyi?$'
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_functions = "test_*"
+addopts = "-v --cov=ame_pro --cov=adaptive_meta_ensemble --cov-report=html --cov-report=term"
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
